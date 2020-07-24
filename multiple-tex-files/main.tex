@@ -1,0 +1,62 @@
+% !TEX root = main.tex
+
+
+
+%% Type de document et encodage de la police
+\documentclass[a4paper]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+
+%% import tex documents
+\usepackage[subpreambles=true]{standalone}
+\usepackage{import}
+
+%% Initialise la taille des pages et des marges
+\usepackage[a4paper, top=3cm, bottom=3cm, left=2cm, right=2cm, marginparwidth=2cm]{geometry}
+
+%% Commandes perso
+\renewcommand{\arraystretch}{1.2} %% row 20% longer
+\definecolor{sprinen}{rgb}{0.0, 1.0, 0.7}
+
+%% Pour les exemples
+\usepackage{mdframed}
+\newmdenv[topline=false, bottomline=false, rightline=false, skipabove=\topsep, skipbelow=\topsep]{example}
+
+%% Pour les diagrammes
+\usepackage{tikz}
+
+%% Packs utiles
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+
+\title{Titre}
+\author{Grégoire Roumache}
+\date{Octobre 2019}
+
+\begin{document}
+
+\maketitle
+
+
+
+
+
+\part{Partie 1}
+
+%% \import{./}{part1.tex}
+
+
+
+
+
+\part{Partie 2}
+
+%% \import{./}{part2.tex}
+
+
+
+
+
+\end{document}
