@@ -11,44 +11,52 @@
 %% Useful packages
 \usepackage{amsmath}
 \usepackage{graphicx}
+\usepackage{float}
 \usepackage[colorinlistoftodos]{todonotes}
+\PassOptionsToPackage{hyphens}{url}
 \usepackage[colorlinks=true, allcolors=black]{hyperref}
 \usepackage{fourier-orns}
 \usepackage{titlesec}
 \usepackage{fancyhdr}
 \usepackage{fancyvrb}
-\pagestyle{fancy} 
+\pagestyle{fancy}
 \setcounter{tocdepth}{5}
+
+%% For examples
+\usepackage{mdframed}
+\newmdenv[topline=false, bottomline=false, rightline=false, skipabove=\topsep, skipbelow=\topsep]{example}
 
 %% Tikz stuff
 \usepackage{tikz}
 \usetikzlibrary{calc, arrows}
 \tikzstyle{incolore} = [rectangle, rounded corners, draw=black, minimum height=1cm, minimum width=3cm, text width=3cm, text centered]
 
+%% To list and caption code
+\usepackage{minted}
+\renewcommand{\listoflistingscaption}{Table des programmes}
+\usepackage{caption}
+\newenvironment{code}{\captionsetup{type=listing}}{}
+\renewcommand{\listingscaption}{Programme}
+
 \usepackage{libertine}
 \newcommand{\hsp}{\hspace{20pt}}
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
 \renewcommand{\headrulewidth}{1pt}
-\fancyhead[C]{} 
+\fancyhead[C]{}
 \fancyhead[L]{}
 \fancyhead[R]{\footnotesize{\leftmark}}
 
 \renewcommand{\footrulewidth}{1pt}
-\fancyfoot[C]{} 
+\fancyfoot[C]{}
 \fancyhead[L]{}
 \fancyfoot[R]{\thepage}
 
-\definecolor{Zgris}{rgb}{0.87,0.85,0.85}
-
 \usepackage{eso-pic,graphicx}
 \usepackage{xcolor}
-\newcommand{\bgimg}[1]
-{
-    \AddToShipoutPicture
-    {
-        \put(\LenToUnit{0 cm},\LenToUnit{0 cm})
-        {
+\newcommand{\bgimg}[1] {
+    \AddToShipoutPicture {
+        \put(\LenToUnit{0 cm},\LenToUnit{0 cm}) {
             \includegraphics[width=\paperwidth,height=\paperheight]{#1}
         }
     }
@@ -67,26 +75,23 @@
             \textsc{\Large Rapport de laboratoire}\\[1.5cm]
 
             \HRule \\[0.4cm]
-            { \huge \bfseries Stabilité d’un pont suspendu soumis à des sollicitations cycliques\\[0.4cm] }
+            { \huge \bfseries Stabilité d’un pont suspendu soumis à des sollicitations cycliques \\[0.4cm] }
             \HRule \\[2cm]
 
             \begin{minipage}{0.4\textwidth}
                 \begin{flushleft} \large
-                    Roumache Grégoire\\
-                    XXXX XXXX\\
-                    XXXX XXXX\\
-                    XXXX XXXX\\
-                    XXXX XXXX\\
-                    XXXX XXXX\\
+                    Grégoire Roumache \\
+                    XXXX XXXX \\
+                    XXXX XXXX \\
+                    XXXX XXXX \\
                 \end{flushleft}
             \end{minipage}
             \begin{minipage}{0.55\textwidth}
                 \begin{flushright} \large
-                    Laboratoire de sciences appliquées à l'informatique\\
-                    Sécurité des systèmes, technologie de l'informatique\\
-                    Hénallux\\
+                    Laboratoire de sciences appliquées à l'informatique \\
+                    Hénallux, Sécurité des systèmes \\
                     Première année, groupe H \\
-                    Année académique 2019-2020\\
+                    Année académique 2019-2020 \\
                 \end{flushright}
             \end{minipage}
             \vfill
@@ -108,14 +113,7 @@
 
 
 
-
-
-
-
-
 \section{Introduction}
-
-
 
 
 
@@ -125,6 +123,32 @@
 
 
 
+
+
+
+
+
+\section{Contenu}
+
+
+
+Voici comment référencer une figure \ref{fig:figurename}. Comment référencer un élément de la bibliographie \cite{1}. Et voici pour un programme \ref{code:progpython}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\linewidth]{images/LogoHenallux.PNG}
+    \caption{Légende de la figure}
+    \label{fig:figurename}
+\end{figure}
+
+\begin{code}\small
+\begin{minted}[xleftmargin=20pt,linenos]{python}
+for i in range(2, 1000):
+    if is_prime(i): print(i)
+\end{minted}
+\caption{Affichage des nombres premiers entre 0 et 1000}
+\label{code:progpython}
+\end{code}
 
 
 
@@ -139,6 +163,30 @@
 
 
 
+%%
+
+
+
+
+
+
+
+
+
+
+\appendix
+
+
+
+
+
+
+
+
+
+
+\section{Annexe}
+
 
 
 %%
@@ -152,35 +200,15 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-\newpage \tableofcontents \listoffigures
+\newpage \tableofcontents \listoffigures \listoflistings
 \begin{thebibliography}{9}
-% \bibitem{1} http://www.example.com
+\bibitem{1} {\small \url{http://www.example.com}}
 % \bibitem{2} 
 % \bibitem{3} 
 % \bibitem{4} 
 % \bibitem{5} 
 % \bibitem{6} 
 \end{thebibliography}
-
-
-
-
-
-
-
-
-
-
 
 
 
