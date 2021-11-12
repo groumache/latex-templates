@@ -1,0 +1,13 @@
+*.gz
+*.aux
+*.out
+*.toc
+*.fls
+*.log
+*.synctex(busy)
+*.fdb_latexmk
+*.synctex
+*/to-be-deleted/*
+*/delete-me/*
+to-be-deleted.*
+delete-me.*
