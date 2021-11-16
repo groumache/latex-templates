@@ -31,12 +31,12 @@
 \usetikzlibrary{calc, arrows}
 \tikzstyle{incolore} = [rectangle, rounded corners, draw=black, minimum height=1cm, minimum width=3cm, text width=3cm, text centered]
 
-%% To list and caption code
-\usepackage{minted}
-\renewcommand{\listoflistingscaption}{Table des programmes}
-\usepackage{caption}
-\newenvironment{code}{\captionsetup{type=listing}}{}
-\renewcommand{\listingscaption}{Programme}
+% %% To list and caption code
+% \usepackage{minted}
+% \renewcommand{\listoflistingscaption}{Table des programmes}
+% \usepackage{caption}
+% \newenvironment{code}{\captionsetup{type=listing}}{}
+% \renewcommand{\listingscaption}{Programme}
 
 \usepackage{libertine}
 \newcommand{\hsp}{\hspace{20pt}}
@@ -141,14 +141,14 @@ Voici comment référencer une figure \ref{fig:figurename}. Comment référencer
     \label{fig:figurename}
 \end{figure}
 
-\begin{code}\small
-\begin{minted}[xleftmargin=20pt,linenos]{python}
-for i in range(2, 1000):
-    if is_prime(i): print(i)
-\end{minted}
-\caption{Affichage des nombres premiers entre 0 et 1000}
-\label{code:progpython}
-\end{code}
+% \begin{code}\small
+% \begin{minted}[xleftmargin=20pt,linenos]{python}
+% for i in range(2, 1000):
+%     if is_prime(i): print(i)
+% \end{minted}
+% \caption{Affichage des nombres premiers entre 0 et 1000}
+% \label{code:progpython}
+% \end{code}
 
 
 
@@ -174,7 +174,7 @@ for i in range(2, 1000):
 
 
 
-\appendix
+\newpage \appendix
 
 
 
@@ -200,7 +200,10 @@ for i in range(2, 1000):
 
 
 
-\newpage \tableofcontents \listoffigures \listoflistings
+\newpage \tableofcontents
+\newpage \addcontentsline{toc}{section}{Table des figures} \listoffigures
+% \newpage \addcontentsline{toc}{section}{Table des programmes} \listoflistings
+\newpage \addcontentsline{toc}{section}{Références}
 \begin{thebibliography}{9}
 \bibitem{1} {\small \url{http://www.example.com}}
 % \bibitem{2} 
