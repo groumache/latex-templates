@@ -1,0 +1,84 @@
+\documentclass[a4paper]{book}
+\usepackage[a4paper, top=3cm, bottom=3cm, left=2.5cm, right=2.5cm, marginparwidth=2cm]{geometry}
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+
+
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+
+\usepackage{tikz}
+
+
+% \RequirePackage{lmodern}
+% \renewcommand*\familydefault{\sfdefault}
+
+
+\title{Titre}
+\author{Grégoire Roumache}
+\date{Octobre 2019}
+
+\begin{document}
+
+\begin{titlepage}
+    \begin{center} \begin{tikzpicture}
+        \node () [text width=10cm, anchor=west] at (0,0.5) {\noindent \huge \textbf{Haute école de Namur Liège Luxembourg}};
+        \node () [text width=10cm, anchor=west] at (0,-0.85) {\noindent \Large Implantation IESN -- Sécurité des systèmes};
+        \node () [anchor=west] at (10,0) {\includegraphics[width=4cm]{images/LogoHenallux.PNG}};
+    \end{tikzpicture} \end{center}
+
+    \vfill
+
+    \begin{center} \begin{tikzpicture}
+        \node () [text width=13cm, draw=black, inner sep=0.5cm, text centered] at (0,0) { \nolinebreak[4] \Huge
+            Étude des processus \\ d'acquisition et d'analyse \\ \vspace{0.2cm} de données forensiques et de menaces
+        };
+    \end{tikzpicture} \end{center}
+
+    \vfill
+
+    \begin{center}
+        \Large Travail de fin d’études présenté en vue de l’obtention du diplôme de bachelier en sécurité des systèmes
+    \end{center}
+
+    \vfill
+
+    \begin{center}
+        \LARGE \textbf{Grégoire Roumache}
+    \end{center}
+
+    \vfill
+
+    \begin{center} \begin{tikzpicture}
+        \node () [text width=4.5cm, text centered] at (0,0) {\Large
+            Maître de stage \\[0.2cm]
+            \textbf{Arnaud Rosette}
+        };
+        \node () [] at (5,0) {\includegraphics[width=4cm]{images/LogoNRB.jpg}};
+        \node () [text width=4.5cm, text centered] at (10,0) {\Large
+            Promoteur \\[0.2cm]
+            \textbf{Christophe Debut}
+        };
+    \end{tikzpicture} \end{center}
+
+    \vfill
+
+    \begin{center} Année académique 2021-2022 \end{center}
+\end{titlepage}
+
+
+\let\cleardoublepage\clearpage
+
+% \tableofcontents \newpage
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
