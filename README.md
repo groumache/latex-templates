@@ -2,7 +2,7 @@
 
 Here are some of the templates I used for my notes, reports, etc.
 
-- [Bullet points notes](bullet-point.tex)
+- [Bullet points notes](bullet-points.tex)
 - [Pentest report](rapport-pentest/rapport-pentest.pdf)
 - [Long school report](rapport-henallux/rapport.pdf)
 - [Short school report](petit-rapport/rapport.pdf)
