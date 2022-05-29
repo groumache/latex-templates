@@ -1,0 +1,34 @@
+\begin{titlepage}
+    \newgeometry{top=3cm,bottom=0cm,right=0cm,left=0cm}
+    \begin{center} \begin{tikzpicture}
+        \node () [text width=10cm, anchor=west] at (-2,5.5) {\noindent \LARGE \textbf{Haute école de Namur Liège Luxembourg}};
+        \node () [text width=10cm, anchor=west] at (-2,4.15) {\noindent \large Implantation IESN -- Sécurité des systèmes};
+        \node () [anchor=west] at (8,5) {\includegraphics[width=4cm]{images/logos/LogoHenallux.PNG}};
+
+
+        \node () [text width=16cm, text centered] at (5,-3) {\LARGE
+            Étude et implémentation de solutions pour \\[0.2cm] l'analyse forensique en entreprise
+        };
+        \node () [text width=16cm, text centered] at (5,-5) {\large
+            Grégoire Roumache
+        };
+
+
+        \node () [text width=16cm, text centered] at (5,-11) {
+            Travail de fin d’études présenté en vue de l’obtention du diplôme de bachelier en \\ sécurité des systèmes
+        };
+        \node () [text width=4.5cm, text centered] at (-0.5,-13) {Maître de stage \\ Arnaud Rosette};
+        \node () [] at (5,-13) {\includegraphics[width=6cm]{images/logos/nrb-group.png}};
+        \node () [text width=4.5cm, text centered] at (10.5,-13) {Promoteur \\ Christophe Debut};
+        \node () [] at (5,-15) {Année académique 2021-2022};
+    \end{tikzpicture} \end{center}
+
+    \begin{tikzpicture}[remember picture,overlay]
+        \fill[nrbdarkblue] ($(current page.south west)+(0,0)$) rectangle ($(current page.south west)+(4.2,0.25)$);
+        \fill[nrbmiddleblue] ($(current page.south west)+(4.2,0)$) rectangle ($(current page.south west)+(8.4,0.25)$);
+        \fill[nrblightblue] ($(current page.south west)+(8.4,0)$) rectangle ($(current page.south west)+(12.6,0.25)$);
+        \fill[nrbred] ($(current page.south west)+(12.6,0)$) rectangle ($(current page.south west)+(16.8,0.25)$);
+        \fill[nrbgray] ($(current page.south west)+(16.8,0)$) rectangle ($(current page.south west)+(21,0.25)$);
+    \end{tikzpicture}
+\end{titlepage}
+

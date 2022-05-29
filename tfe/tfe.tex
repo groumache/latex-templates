@@ -1,76 +1,168 @@
-\documentclass[a4paper]{book}
-\usepackage[a4paper, top=3cm, bottom=3cm, left=2.5cm, right=2.5cm, marginparwidth=2cm]{geometry}
+% LTeX: language=fr
+
+\documentclass[a4paper, 12pt, twosides]{book}
+\usepackage[a4paper, top=3.5cm, bottom=4.0cm, left=3.0cm, right=3.0cm, marginparwidth=2cm]{geometry}
 \usepackage[colorlinks=true, allcolors=black]{hyperref}
 
 
 \usepackage[french]{babel}
 \usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{standalone}
+
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\fancypagestyle{frontmatter}{
+    \fancyhf{}
+    \fancyfoot[C]{\thepage}
+}
+\fancypagestyle{body}{
+    \fancyhead[LE,RO]{\footnotesize \leftmark}
+    \fancyhead[LO,RE]{\footnotesize \rightmark}
+    \fancyfoot[C]{\thepage}
+}
+
+\makeatletter
+\renewcommand\frontmatter{
+    \cleardoublepage
+    \pagestyle{frontmatter}
+    \@mainmatterfalse
+}
+\renewcommand\mainmatter{
+    \cleardoublepage
+    \pagestyle{body}
+    \@mainmattertrue
+}
+\makeatother
+
+
+\makeatletter
+\newsavebox\Diam@nd \newlength\x@D\newlength\y@D
+\newcommand\quem{
+  \sbox\Diam@nd{\raisebox{-1ex}{\scalebox{0.7}[0.9]{\rotatebox{45}{\rule{1em}{1em}}}}}
+  \makebox[\wd\Diam@nd]{\makebox[0pt]{\usebox\Diam@nd}\makebox[0pt]{\raisebox{-0.02cm}{\textcolor{white}{?}}}}}
+\makeatother
+
 
 \usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{patterns}
+
+\usepackage{xcolor}
+\definecolor{nrbdarkblue}{RGB}{0,47,81}
+\definecolor{nrbmiddleblue}{RGB}{0,124,180}
+\definecolor{nrblightblue}{RGB}{79,169,209}
+\definecolor{nrbred}{RGB}{215,25,27}
+\definecolor{nrbgray}{RGB}{91,96,105}
+
+\newcommand{\rothead}[1]{\rotatebox{45}{#1}}
+\newcommand{\oui}{\textcolor{blue!65}{\textbf{$\times$}}}
+\newcommand{\non}{\textcolor{red!65}{\textbf{$\times$}}}
+
+\setlength{\parskip}{1em}
+\setlist[itemize]{itemsep=0.1cm}
+
+\tikzstyle{incolore} = [rectangle, text centered, minimum height=0.8cm, text width=6.5cm]
+\tikzstyle{todo} = [rectangle, fill=gray!50, minimum height=0.4cm, anchor=west]
+\tikzstyle{done} = [todo, fill=blue!65]
+\tikzstyle{hold} = [rectangle, minimum height=0.4cm, pattern color=blue!65, pattern=north east lines, anchor=west]
+\tikzstyle{doing} = [todo, fill=red!65]
+
+\usepackage{mdframed}
+\newmdenv[topline=false, bottomline=false, rightline=false, skipabove=\topsep, skipbelow=\topsep, linewidth=0.1cm, linecolor=nrbmiddleblue]{customquote}
+\newmdenv[topline=false, bottomline=false, rightline=false, skipabove=\topsep, skipbelow=\topsep, linewidth=0.1cm, linecolor=nrbred]{example}
 
 
-% \RequirePackage{lmodern}
-% \renewcommand*\familydefault{\sfdefault}
 
 
-\title{Titre}
-\author{Grégoire Roumache}
-\date{Octobre 2019}
+
+
+
+
+
 
 \begin{document}
 
-\begin{titlepage}
-    \begin{center} \begin{tikzpicture}
-        \node () [text width=10cm, anchor=west] at (0,0.5) {\noindent \huge \textbf{Haute école de Namur Liège Luxembourg}};
-        \node () [text width=10cm, anchor=west] at (0,-0.85) {\noindent \Large Implantation IESN -- Sécurité des systèmes};
-        \node () [anchor=west] at (10,0) {\includegraphics[width=4cm]{images/LogoHenallux.PNG}};
-    \end{tikzpicture} \end{center}
-
-    \vfill
-
-    \begin{center} \begin{tikzpicture}
-        \node () [text width=13cm, draw=black, inner sep=0.5cm, text centered] at (0,0) { \nolinebreak[4] \Huge
-            Étude des processus \\ d'acquisition et d'analyse \\ \vspace{0.2cm} de données forensiques et de menaces
-        };
-    \end{tikzpicture} \end{center}
-
-    \vfill
-
-    \begin{center}
-        \Large Travail de fin d’études présenté en vue de l’obtention du diplôme de bachelier en sécurité des systèmes
-    \end{center}
-
-    \vfill
-
-    \begin{center}
-        \LARGE \textbf{Grégoire Roumache}
-    \end{center}
-
-    \vfill
-
-    \begin{center} \begin{tikzpicture}
-        \node () [text width=4.5cm, text centered] at (0,0) {\Large
-            Maître de stage \\[0.2cm]
-            \textbf{Arnaud Rosette}
-        };
-        \node () [] at (5,0) {\includegraphics[width=4cm]{images/LogoNRB.jpg}};
-        \node () [text width=4.5cm, text centered] at (10,0) {\Large
-            Promoteur \\[0.2cm]
-            \textbf{Christophe Debut}
-        };
-    \end{tikzpicture} \end{center}
-
-    \vfill
-
-    \begin{center} Année académique 2021-2022 \end{center}
-\end{titlepage}
-
+\include{contents/titlepage.tex}
 
 \let\cleardoublepage\clearpage
 
-% \tableofcontents \newpage
 
 
+
+
+\frontmatter
+
+
+
+
+
+% \include{contents/remerciements.tex}
+
+
+\tableofcontents \addcontentsline{toc}{chapter}{Table des matières} \newpage
+
+
+\include{contents/synopsis.tex}
+
+
+% \include{contents/presentation-entreprise.tex}
+
+
+
+
+
+\mainmatter
+
+
+
+
+
+% \include{contents/introduction.tex}
+
+
+% \include{contents/...}
+
+
+% \include{contents/conclusion.tex}
+
+
+
+
+
+\appendix
+
+
+
+
+
+% \listoftables \addcontentsline{toc}{chapter}{Liste des tableaux} \newpage
+% \listoffigures \addcontentsline{toc}{chapter}{Table des figures} \newpage
+
+
+
+
+
+% \include{contents/rapport-stage.tex}
+
+
+
+
+
+\begin{thebibliography}{9} \addcontentsline{toc}{chapter}{Bibliographie}
+    \bibitem{1} \textit{Générateur gratuit de sources au format APA}. (2022, 23 mai). Scribbr. Consulté le 29 mai 2022, à l’adresse \url{https://www.scribbr.fr/generateur-apa/}
+    % \bibitem{2} ...
+    % \bibitem{3} ...
+    % \bibitem{4} ...
+    % \bibitem{5} ...
+\end{thebibliography}
 
 
 
